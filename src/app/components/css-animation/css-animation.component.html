@@ -1,0 +1,26 @@
+<div class="text-data">
+  <mat-chip-listbox aria-label="CSS Shapes">
+    <mat-chip-option (click)="boxClick()" selected>Box</mat-chip-option>
+    <mat-chip-option (click)="triangleClick()">Traingle</mat-chip-option>
+    <mat-chip-option (click)="heartClick()">Heart</mat-chip-option>
+    <mat-chip-option (click)="moonClick()">Moon</mat-chip-option>
+    <mat-chip-option (click)="starClick()">Star</mat-chip-option>
+  </mat-chip-listbox>
+</div>
+<div class="container">
+  <div class="containerIn box-main">
+    <div class="box" *ngIf="boxFlag"></div>
+  </div>
+  <div class="containerIn triangle-main">
+    <div class="triangle" *ngIf="triangleFlag"></div>
+  </div>
+  <div class="containerIn heart-main">
+    <div class="heart" *ngIf="heartFlag"></div>
+  </div>
+  <div class="containerIn oon-main">
+    <div class="moon" *ngIf="moonFlag"></div>
+  </div>
+  <div class="containerIn star-main">
+    <div class="star" *ngIf="starFlag"></div>
+  </div>
+</div>

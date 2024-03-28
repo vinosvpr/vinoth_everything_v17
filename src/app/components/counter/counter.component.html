@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="counter-container">
+      <h1>Counter</h1>
+      <div class="counter-data">
+        <h3>Counter Value</h3>
+        <div class="cValue">{{ count$ | async }}</div>
+        <div class="counter-data-buttons">
+          <button class="btn btn-increment" (click)="increment()">
+            Increment
+          </button>
+          <button class="btn btn-decrement" (click)="decrement()">
+            Decrement
+          </button>
+          <button class="btn btn-reset" (click)="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

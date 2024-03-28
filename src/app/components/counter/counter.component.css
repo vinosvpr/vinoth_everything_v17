@@ -1,0 +1,37 @@
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* .counter-container h1 {
+} */
+/* .counter-data {
+} */
+.counter-data h3 {
+  font-size: 1.5em;
+  color: #3aaf9a;
+}
+.cValue {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: blue;
+}
+/* .counter-data-buttons {
+} */
+.btn {
+  color: #fff;
+  font-size: 14px;
+  margin: 20px 10px;
+  padding: 4px 10px;
+}
+.btn-increment {
+  background: #61de61;
+}
+.btn-decrement {
+  background: #e42626;
+}
+.btn-reset {
+  background: orange;
+}

@@ -1,0 +1,31 @@
+.container-text {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0px auto;
+  text-align: center;
+  align-items: center;
+}
+.container-text h1 {
+  font-size: 3rem;
+  line-height: 3rem;
+  padding: 20px 0px;
+  text-shadow: -2px 5px 5px #333;
+}
+.container-text form {
+  width: 540px;
+}
+.container-text form textarea {
+  border: 1px solid;
+  padding: 20px;
+  resize: none;
+  width: 100%;
+}
+.container-text form button {
+  width: 200px;
+  margin: 24px auto;
+  padding: 10px;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}

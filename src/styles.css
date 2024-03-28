@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* VINOTH CODE */
+
+/* Table of content */
+/* 
+*.Primary
+1.Home
+2.About
+*/
+
+/* *Primary */
+:root {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #e0f6f2;
+}
+.bg-vino-dark {
+  background: #fff !important;
+  border-bottom: 4px solid #3aaf9a;
+  background: #fff !important;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #3aaf9a;
+}

@@ -1,0 +1,152 @@
+<div class="container">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Back to Home"
+    #tooltip="matTooltip"
+    matTooltip="Back to Home"
+    fontIcon="home"
+    class="pos_abs"
+    routerLink="/"
+  ></mat-icon>
+  <div class="row">
+    <div class="col-7" [ngClass]="isSidePanelVisible == false ? 'col-12' : ''">
+      <div class="card">
+        <div class="card-header col-12">
+          <div class="row">
+            <div class="col-6">
+              <h2>Registered Users</h2>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary float-end" (click)="addEmp()">
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table
+            class="table"
+            *ngIf="registeredEmployee.length > 0; else noData"
+          >
+            <thead>
+              <tr class="table-primary">
+                <th>S.no</th>
+                <th>Employee Name</th>
+                <th>Employee Role</th>
+                <th>Employee Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of registeredEmployee; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ employee.empName }}</td>
+                <td>{{ employee.empRole }}</td>
+                <td>{{ employee.email }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <ng-template #noData>
+            No Employee record found, please click add button
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="col-5" [ngClass]="isSidePanelVisible == true ? '' : 'd-none'">
+      <div class="card">
+        <div class="card-header col-12">
+          <div class="row">
+            <div class="col-9">
+              <h2>Employee Registration Form</h2>
+            </div>
+            <div class="col-3">
+              <button class="btn btn-danger float-end" (click)="closeEmp()">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="employeeRegistrationForm" (ngSubmit)="onSubmit()">
+            <div class="formData">
+              <label for="username">Employee Name:</label>
+              <input type="text" id="username" formControlName="empName" />
+              <div
+                *ngIf="
+                  employeeRegistrationForm.get('empName')?.invalid &&
+                  employeeRegistrationForm.get('empName')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="employeeRegistrationForm.get('empName')?.errors?.['required']"
+                  >Username is required.</small
+                >
+              </div>
+            </div>
+            <div class="formData">
+              <label for="username">Employee Role:</label>
+              <input type="text" id="username" formControlName="empRole" />
+              <div
+                *ngIf="
+                  employeeRegistrationForm.get('empRole')?.invalid &&
+                  employeeRegistrationForm.get('empRole')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="employeeRegistrationForm.get('empRole')?.errors?.['required']"
+                  >Username is required.</small
+                >
+              </div>
+            </div>
+            <div class="formData">
+              <label for="email">Email:</label>
+              <input type="email" id="email" formControlName="email" />
+              <div
+                *ngIf="
+                  employeeRegistrationForm.get('email')?.invalid &&
+                  employeeRegistrationForm.get('email')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="employeeRegistrationForm.get('email')?.errors?.['required']"
+                  >Email is required.</small
+                >
+                <small
+                  class="text-danger"
+                  *ngIf="employeeRegistrationForm.get('email')?.errors?.['email']"
+                  >Invalid email format.</small
+                >
+              </div>
+            </div>
+            <div class="formData">
+              <label for="password">Password:</label>
+              <input type="password" id="password" formControlName="password" />
+              <div
+                *ngIf="
+                  employeeRegistrationForm.get('password')?.invalid &&
+                  employeeRegistrationForm.get('password')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="employeeRegistrationForm.get('password')?.errors?.['required']"
+                  >Password is required.</small
+                >
+              </div>
+            </div>
+            <button
+              class="btn btn-secondary"
+              type="submit"
+              [disabled]="employeeRegistrationForm.invalid"
+            >
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

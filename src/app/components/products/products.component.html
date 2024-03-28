@@ -1,0 +1,15 @@
+<!-- products.component.html -->
+
+<div *ngIf="products$ | async as products">
+  <ul>
+    <li *ngFor="let item of products">{{ item.title }}</li>
+  </ul>
+</div>
+
+<ng-template #noProducts>
+  <p>No products available</p>
+</ng-template>
+
+<div *ngIf="showLoader$ | async" class="loader">
+  <mat-spinner></mat-spinner>
+</div>

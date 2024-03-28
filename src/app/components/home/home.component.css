@@ -1,0 +1,44 @@
+.project-list-in {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.project-list-in .image-container {
+  position: relative;
+  width: 100%;
+}
+
+.project-list-in .image-container img {
+  width: 100%;
+  border: 4px solid #3aaf9a;
+}
+
+.project-list-in .image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    58,
+    175,
+    154,
+    0.5
+  ); /* Initial overlay color with transparency */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+.project-list-in .image-container:hover .overlay {
+  opacity: 1; /* Make overlay visible on hover */
+}
+.project-list-in .projectTitle {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 20px 0px;
+  letter-spacing: 0.1px;
+}
