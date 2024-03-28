@@ -1,1 +1,202 @@
-<p>student-registration works!</p>
+<div class="container">
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Back to Home"
+    #tooltip="matTooltip"
+    matTooltip="Back to Home"
+    fontIcon="home"
+    class="pos_abs"
+    routerLink="/"
+  ></mat-icon>
+  <div class="row">
+    <div class="col-7" [class.col-12]="!isSidePanelVisible">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-6">
+              <h2>Student's Register</h2>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-primary float-end" (click)="addStudent()">
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <thead>
+              <tr class="table-primary">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Grade</th>
+                <th>Attendance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of studentList">
+                <td>{{ student.sId }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.gender }}</td>
+                <!-- <td [ngClass]="student.grade == 'U' ? 'text-danger' : ''"> -->
+                <td
+                  [ngClass]="{
+                    'text-danger': student.grade == 'U',
+                    'text-success': student.grade == 'S',
+                    'text-primary': student.grade == 'A',
+                    'text-secondary': student.grade == 'B',
+                    'text-warning': student.grade == 'C'
+                  }"
+                >
+                  {{ student.grade }}
+                </td>
+                <td>
+                  <ng-container *ngIf="student.isPresent; else absent"
+                    ><span class="text-success">Present</span></ng-container
+                  >
+                  <ng-template #absent>
+                    <span class="text-danger">Absent</span>
+                  </ng-template>
+                </td>
+                <!-- <td>{{ student.isPresent }}</td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-5" [class.d-none]="!isSidePanelVisible">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-6">
+              <h2>Add Student Details</h2>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-danger float-end" (click)="closeStudent()">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="studentRegistrationForm" (ngSubmit)="onSubmit()">
+            <div class="formData">
+              <label for="studentId">Student Id:</label>
+              <input type="number" id="studentId" formControlName="sId" />
+              <div
+                *ngIf="
+                  studentRegistrationForm.get('sId')?.invalid &&
+                  studentRegistrationForm.get('sId')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="studentRegistrationForm.get('sId')?.errors?.['required']"
+                  >Student Id is required.</small
+                >
+              </div>
+            </div>
+            <div class="formData">
+              <label for="studentId">Student Name:</label>
+              <input type="text" id="studentName" formControlName="name" />
+              <div
+                *ngIf="
+                  studentRegistrationForm.get('name')?.invalid &&
+                  studentRegistrationForm.get('name')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="studentRegistrationForm.get('name')?.errors?.['required']"
+                  >Student Name is required.</small
+                >
+              </div>
+            </div>
+            <div class="formData">
+              <label for="gender">Gender:</label>
+              <label>
+                <input type="radio" formControlName="gender" value="Male" />
+                Male
+              </label>
+              <label>
+                <input type="radio" formControlName="gender" value="Female" />
+                Female
+              </label>
+
+              <div
+                *ngIf="
+                  studentRegistrationForm.get('gender')?.invalid &&
+                  studentRegistrationForm.get('gender')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="studentRegistrationForm.get('gender')?.errors?.['required']"
+                  >Student Gender is required.</small
+                >
+              </div>
+            </div>
+            <div class="formData">
+              <label for="studentId">Student Grade:</label>
+              <input type="text" id="studentName" formControlName="grade" />
+              <div
+                *ngIf="
+                  studentRegistrationForm.get('grade')?.invalid &&
+                  studentRegistrationForm.get('grade')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="studentRegistrationForm.get('grade')?.errors?.['required'] || studentRegistrationForm.get('grade')?.errors?.['invalidGrade']"
+                  >Student Grade must be one of: A, B, C, S, or U.</small
+                >
+              </div>
+            </div>
+            <div class="formData">
+              <label for="isPresent">Attendannce:</label>
+
+              <label>
+                <input
+                  type="radio"
+                  formControlName="isPresent"
+                  value="Present"
+                />
+                Present
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  formControlName="isPresent"
+                  value="Absent"
+                />
+                Absent
+              </label>
+
+              <div
+                *ngIf="
+                  studentRegistrationForm.get('isPresent')?.invalid &&
+                  studentRegistrationForm.get('isPresent')?.touched
+                "
+              >
+                <small
+                  class="text-danger"
+                  *ngIf="studentRegistrationForm.get('isPresent')?.errors?.['required']"
+                  >Student Attendance is required.</small
+                >
+              </div>
+            </div>
+            <button
+              class="btn btn-secondary"
+              type="submit"
+              [disabled]="studentRegistrationForm.invalid"
+            >
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

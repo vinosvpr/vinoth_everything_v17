@@ -4,7 +4,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {
   FormBuilder,
   FormGroup,
-  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
