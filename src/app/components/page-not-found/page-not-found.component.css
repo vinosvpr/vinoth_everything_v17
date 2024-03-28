@@ -1,0 +1,32 @@
+.notfoundContainer {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 102px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.notfoundHeader {
+  color: #3aaf9a;
+  font-size: 4rem;
+  line-height: 4rem;
+}
+.notfoundText {
+  color: #3aaf9a;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+.mat-icon {
+  -webkit-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: #198754;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  font-size: 50px;
+  color: #3aaf9a;
+  cursor: pointer;
+}
