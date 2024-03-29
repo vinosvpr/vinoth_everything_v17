@@ -9,6 +9,7 @@ import { StudentRegistrationComponent } from './components/student-registration/
 import { BikeRentalComponent } from './components/bike-rental/bike-rental.component';
 import { MovieBookingComponent } from './components/movie-booking/movie-booking.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DragAndDropComponent } from './components/drag-and-drop/drag-and-drop.component';
 
 export const routes: Routes = [
   { title: 'Vinoth - Portfolio: Home', path: '', component: HomeComponent },
@@ -51,6 +52,11 @@ export const routes: Routes = [
     title: 'Vinoth - Portfolio: Movie Ticket Booking',
     path: 'movie-ticket-booking',
     component: MovieBookingComponent,
+  },
+  {
+    title: 'Vinoth - Portfolio: Drag and Drop',
+    path: 'drag-and-drop',
+    component: DragAndDropComponent,
   },
   {
     title: 'Vinoth - Portfolio: Page Not Found',
