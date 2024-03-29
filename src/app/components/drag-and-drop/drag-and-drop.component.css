@@ -1,3 +1,10 @@
+.header {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0px;
+  text-shadow: 3px 5px 6px #333;
+}
+
 .board {
   display: flex;
 }
@@ -5,12 +12,16 @@
 .column {
   flex: 1;
   padding: 10px;
+  border: 1px solid #3aaf9a;
+  margin: 0px 5px;
+  border-radius: 6px;
 }
 
 .column h3 {
-  background-color: #f4f4f4;
+  background-color: #3aaf9a;
   padding: 5px;
   margin: 0;
+  text-align: center;
 }
 
 .card {
@@ -24,4 +35,21 @@
 
 .card:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Define colors for different statuses */
+.todo {
+  background-color: #ffeb3b; /* Yellow */
+}
+
+.in-progress {
+  background-color: #2196f3; /* Blue */
+}
+
+.in-review {
+  background-color: #ff9800; /* Orange */
+}
+
+.done {
+  background-color: #4caf50; /* Green */
 }

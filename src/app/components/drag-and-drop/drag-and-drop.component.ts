@@ -57,5 +57,12 @@ export class DragAndDropComponent {
   }
   onDrop(event: any, status: string) {
     console.log(`onDrop`);
+    const record = this.ticketsArray.find(
+      (m) => m.ticketId == this.currentItem.ticketId
+    );
+    if (record != undefined) {
+      record.status = status;
+    }
+    this.currentItem = null;
   }
 }
