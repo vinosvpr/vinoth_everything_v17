@@ -31,9 +31,11 @@
           *ngFor="let item of filterTickets('In Progress')"
           (dragstart)="onDragStart(item)"
         >
-          {{ item.ticketId }}
+          <!-- {{ item.ticketId }} -->
+          Task
           <br />
-          {{ item.ticketName }}
+          <!-- {{ item.ticketName }} -->
+          Task
         </div>
       </div>
       <div
