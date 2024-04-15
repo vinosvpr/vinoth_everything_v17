@@ -1,0 +1,57 @@
+/* login.component.css */
+
+.login-container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin: 50px auto;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(58, 175, 154);
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: rgb(58, 175, 154);
+}
+button:disabled {
+  background-color: rgb(58, 175, 154, 0.6) !important;
+  /* color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3)) !important;
+  border-color: light-dark(
+    rgba(118, 118, 118, 0.3),
+    rgba(195, 195, 195, 0.3)
+  ) !important; */
+  pointer-events: none;
+}

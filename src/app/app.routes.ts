@@ -10,9 +10,20 @@ import { BikeRentalComponent } from './components/bike-rental/bike-rental.compon
 import { MovieBookingComponent } from './components/movie-booking/movie-booking.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DragAndDropComponent } from './components/drag-and-drop/drag-and-drop.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
-  { title: 'Vinoth - Portfolio: Home', path: '', component: HomeComponent },
+  { title: 'Vinoth - Portfolio: Login', path: '', component: LoginComponent },
+  {
+    title: 'Vinoth - Login',
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    title: 'Vinoth - Home',
+    path: 'home',
+    component: HomeComponent,
+  },
   {
     title: 'Vinoth - Portfolio: Css Animation',
     path: 'animation',
